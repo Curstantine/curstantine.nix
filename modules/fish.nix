@@ -7,8 +7,8 @@
       set fish_greeting # Disable greeting
     '';
     shellAliases = {
-      sys-update = "nix flake update --flake ~/Code/Personal/curstantine.nix/flake.nix";
-      sys-switch = "doas nixos-rebuild switch --flake ~/Code/Personal/curstantine.nix/flake.nix";
+      sys-update = "nix flake update --flake ~/Code/Personal/curstantine.nix";
+      sys-switch = "doas nixos-rebuild switch --flake ~/Code/Personal/curstantine.nix";
     };
     plugins = [
       {

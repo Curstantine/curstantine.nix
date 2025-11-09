@@ -38,6 +38,7 @@
     ../modules/fish.nix
     ../modules/gpg.nix
     ../modules/helix.nix
+    ../modules/jetbrains.nix
     ../modules/fooyin/fooyin.nix
   ];
 }
