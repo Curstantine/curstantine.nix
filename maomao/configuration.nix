@@ -22,6 +22,18 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Plymouth
+  boot.plymouth.enable = true;
+  boot.consoleLogLevel = 3;
+  boot.loader.timeout = 0;
+  boot.kernelParams = [
+    "quiet"
+    "splash"
+    "boot.shell_on_fail"
+    "udewv.log_priority=3"
+    "rd.systemd.show_status=auto"
+  ];
+
   networking.hostName = "maomao";
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
