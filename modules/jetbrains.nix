@@ -3,6 +3,5 @@
   home.packages = with pkgs; [
     jetbrains.jdk
     jetbrains.webstorm
-    android-studio
   ];
 }

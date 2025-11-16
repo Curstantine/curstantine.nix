@@ -39,6 +39,7 @@
     ../modules/gpg.nix
     ../modules/helix.nix
     ../modules/jetbrains.nix
+    ../modules/android.nix
     ../modules/fooyin/fooyin.nix
   ];
 }

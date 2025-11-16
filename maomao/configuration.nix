@@ -91,7 +91,7 @@
     isNormalUser = true;
     extraGroups = [
       "wheel"
-      "adbusers"
+      "kvm"
     ];
     useDefaultShell = true;
   };
@@ -105,6 +105,7 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.android_sdk.accept_license = true;
 
   # Extra Programs
   programs.fish.enable = true;
