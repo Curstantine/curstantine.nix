@@ -4,7 +4,7 @@
   home.homeDirectory = "/home/curstantine";
   home.stateVersion = "25.05";
   home.packages = with pkgs; [
-    discord
+    vesktop
     chromium
     grc
     vial
@@ -24,6 +24,7 @@
 
   # Only enable chromium profiles
   programs.chromium.enable = true;
+  programs.firefox.enable = true;
 
   programs.obs-studio.enable = true;
 

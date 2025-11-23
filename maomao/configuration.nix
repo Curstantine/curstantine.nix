@@ -21,6 +21,7 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.initrd.kernelModules = [ "amdgpu" ];
 
   # Plymouth
   boot.plymouth.enable = true;
@@ -109,7 +110,6 @@
 
   # Extra Programs
   programs.fish.enable = true;
-  programs.firefox.enable = true;
   programs.adb.enable = true;
 
   # List packages installed in system profile.
@@ -127,6 +127,7 @@
     kdePackages.ksystemlog
     kdePackages.sddm-kcm
     kdePackages.partitionmanager
+    kdePackages.krunner
 
     hardinfo2
     wayland-utils
@@ -146,6 +147,8 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 3000 ];
+  networking.wireguard.enable = true;
+
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
