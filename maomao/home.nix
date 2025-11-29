@@ -16,8 +16,8 @@
 
   programs.git = {
     enable = true;
-    userName = "Curstantine";
-    userEmail = "Curstantine@proton.me";
+    settings.user.name = "Curstantine";
+    settings.user.email = "Curstantine@proton.me";
     signing.key = "1AE8C302FD63ED84";
     signing.signByDefault = true;
   };
@@ -41,6 +41,6 @@
     ../modules/helix.nix
     ../modules/jetbrains.nix
     ../modules/android.nix
-    ../modules/fooyin/fooyin.nix
+    #    ../modules/fooyin/fooyin.nix
   ];
 }
