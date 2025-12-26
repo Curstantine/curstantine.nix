@@ -4,7 +4,7 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      theme = "amberwood";
+      theme = "base16_default_dark";
     };
     languages = {
       language = [
