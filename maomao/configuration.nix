@@ -27,12 +27,14 @@
   boot.plymouth.enable = true;
   boot.consoleLogLevel = 3;
   boot.loader.timeout = 0;
+  boot.loader.systemd-boot.consoleMode = "2";
   boot.kernelParams = [
     "quiet"
     "splash"
     "boot.shell_on_fail"
     "udewv.log_priority=3"
     "rd.systemd.show_status=auto"
+    "amdgpu.gpu_recovery=1"
   ];
 
   networking.hostName = "maomao";
@@ -111,6 +113,8 @@
   # Extra Programs
   programs.fish.enable = true;
   programs.adb.enable = true;
+  programs.nix-ld.enable = true;
+  programs.steam.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
