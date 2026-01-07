@@ -6,12 +6,13 @@
   home.packages = with pkgs; [
     vesktop
     chromium
+    vivaldi
     grc
     vial
     qbittorrent
-    bottles
     gimp
     picard
+    (bottles.override { removeWarningPopup = true; })
   ];
 
   programs.git = {
@@ -20,6 +21,15 @@
     settings.user.email = "Curstantine@proton.me";
     signing.key = "1AE8C302FD63ED84";
     signing.signByDefault = true;
+  };
+
+  programs.ghostty = {
+    enable = true;
+    enableFishIntegration = true;
+    settings = {
+      theme = "Sonokai";
+      font-size = 11;
+    };
   };
 
   # Only enable chromium profiles
@@ -41,6 +51,6 @@
     ../modules/helix.nix
     ../modules/jetbrains.nix
     ../modules/android.nix
-    #    ../modules/fooyin/fooyin.nix
+    ../modules/fooyin/fooyin.nix
   ];
 }
