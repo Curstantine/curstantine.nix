@@ -59,7 +59,6 @@
   # DM Setup (KDE)
   programs.hyprland.enable = true;
   programs.hyprland.withUWSM = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -121,17 +120,6 @@
     wget
     mpv
     helix
-
-    # KDE
-    kdePackages.kcolorchooser
-    kdePackages.sddm-kcm
-    kdePackages.partitionmanager
-  ];
-
-  # Exclude extra apps installed by Plasma
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    elisa
-    konsole
   ];
 
   # List services that you want to enable:
