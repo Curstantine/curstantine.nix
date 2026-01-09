@@ -7,7 +7,6 @@
     vesktop
     chromium
     vivaldi
-    grc
     vial
     qbittorrent
     gimp

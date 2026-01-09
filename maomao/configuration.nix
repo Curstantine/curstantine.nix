@@ -32,7 +32,7 @@
     "quiet"
     "splash"
     "boot.shell_on_fail"
-    "udewv.log_priority=3"
+    "udev.log_priority=3"
     "rd.systemd.show_status=auto"
     "amdgpu.gpu_recovery=1"
   ];
@@ -112,7 +112,6 @@
 
   # Extra Programs
   programs.fish.enable = true;
-  programs.adb.enable = true;
   programs.nix-ld.enable = true;
   programs.steam.enable = true;
 
@@ -125,24 +124,24 @@
 
     # KDE
     kdePackages.kcalc
-    kdePackages.kcharselect
-    kdePackages.kclock
     kdePackages.kcolorchooser
-    kdePackages.ksystemlog
     kdePackages.sddm-kcm
     kdePackages.partitionmanager
     kdePackages.krunner
+  ];
 
-    hardinfo2
-    wayland-utils
-    wl-clipboard
+  # Exclude extra apps installed by Plasma
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    elisa
+    konsole
   ];
 
   # List services that you want to enable:
-
   services.udev = {
     packages = with pkgs; [
-      qmk-udev-rules # For vial to work
+      # For vial to work
+      qmk-udev-rules
+      vial
     ];
   };
 

@@ -15,6 +15,28 @@
             command = "nixfmt";
           };
         }
+        {
+          name = "tsx";
+          auto-format = true;
+          formatter = {
+            command = "prettier";
+          };
+          language-servers = [
+            "tailwindcss"
+            "tailwindcss-ls"
+          ];
+        }
+        {
+          name = "css";
+          auto-format = true;
+          formatter = {
+            command = "prettier";
+          };
+          language-servers = [
+            "vscode-css-language-server"
+            "tailwindcss-ls"
+          ];
+        }
       ];
     };
   };
