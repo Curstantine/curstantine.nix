@@ -43,6 +43,7 @@
   programs.direnv.nix-direnv.enable = true;
 
   imports = [
+    ../modules/hyprland.nix
     ../modules/fonts.nix
     ../modules/fish.nix
     ../modules/gpg.nix

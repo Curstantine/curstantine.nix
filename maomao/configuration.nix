@@ -57,9 +57,9 @@
   };
 
   # DM Setup (KDE)
-  services.desktopManager.plasma6.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  programs.hyprland.enable = true;
+  programs.hyprland.withUWSM = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
