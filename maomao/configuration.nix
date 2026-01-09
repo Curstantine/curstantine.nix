@@ -57,6 +57,7 @@
   };
 
   # DM Setup (KDE)
+  services.displayManager.ly.enable = true;
   programs.hyprland.enable = true;
   programs.hyprland.withUWSM = true;
 

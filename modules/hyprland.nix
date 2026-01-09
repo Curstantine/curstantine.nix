@@ -3,8 +3,9 @@
   home.packages = with pkgs; [
     hyprpaper
     mako
+    rofi
     cliphist
-    wl-paste
+    wl-clipboard-rs
   ];
 
   wayland.windowManager.hyprland.enable = true;
@@ -23,11 +24,20 @@
     "$mainMod" = "SUPER";
     "$terminal" = "ghostty";
     "$fileManager" = "dolphin";
-    "$menu" = "rofi -show drun -run-command 'uwsm app -- {cmd}'";
+    "$menu" = "hyprlauncher";
 
-    montior = [
-      "DP-5, highrr, 0x0, 1, transform, 1"
-      "DP-4, preferred, 1080x200, 1"
+    monitorv2 = [
+      {
+        output = "DP-5";
+        mode = "1920x1080@100";
+        transform = 1;
+      }
+      {
+        output = "DP-4";
+        mode = "2560x1440@60";
+        position = "1080x200";
+        transform = 0;
+      }
     ];
 
     # Autostart
@@ -52,6 +62,24 @@
     decoration = {
       rounding = 0;
       shadow.enabled = true;
+    };
+
+    dwindle = {
+      smart_resizing = true;
+    };
+
+    misc = {
+      force_default_wallpaper = 1;
+      disable_hyprland_logo = true;
+    };
+
+    input = {
+      kb_layout = "us";
+      kb_variant = "dvorak";
+
+      follow_mouse = 1;
+      accel_profile = "flat";
+      sensitivity = 0;
     };
 
     bind = [
@@ -95,8 +123,8 @@
             ws = i + 1;
           in
           [
-            "$mod, code:1${toString i}, workspace, ${toString ws}"
-            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+            "$mainMod, code:1${toString i}, workspace, ${toString ws}"
+            "$mainMod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
           ]
         ) 9
       )
@@ -110,13 +138,13 @@
 
   };
 
-  submaps.resize.settings = {
+  wayland.windowManager.hyprland.submaps.resize.settings = {
     binde = [
       ", right, resizeactive, 10 0"
       ", left, resizeactive, -10 0"
       ", up, resizeactive, 0 -10"
       ", down, resizeactive, 0 10"
     ];
-    bind = ", escape, submap, reset";
+    bind = [ ", escape, submap, reset" ];
   };
 }
