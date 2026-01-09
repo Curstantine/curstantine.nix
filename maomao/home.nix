@@ -4,7 +4,6 @@
   home.homeDirectory = "/home/curstantine";
   home.stateVersion = "25.05";
   home.packages = with pkgs; [
-    vesktop
     chromium
     vivaldi
     vial
@@ -35,6 +34,7 @@
   programs.chromium.enable = true;
   programs.firefox.enable = true;
 
+  programs.vesktop.enable = true;
   programs.obs-studio.enable = true;
 
   programs.zed-editor.enable = true;
@@ -50,6 +50,7 @@
     ../modules/helix.nix
     ../modules/jetbrains.nix
     ../modules/android.nix
+    ../modules/vicinae.nix
     ../modules/fooyin/fooyin.nix
   ];
 }

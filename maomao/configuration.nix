@@ -123,11 +123,9 @@
     helix
 
     # KDE
-    kdePackages.kcalc
     kdePackages.kcolorchooser
     kdePackages.sddm-kcm
     kdePackages.partitionmanager
-    kdePackages.krunner
   ];
 
   # Exclude extra apps installed by Plasma
