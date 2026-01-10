@@ -10,6 +10,7 @@
     qbittorrent
     gimp
     picard
+    btop-rocm
     (bottles.override { removeWarningPopup = true; })
   ];
 
