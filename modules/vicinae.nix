@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   programs.vicinae.enable = true;
   programs.vicinae.systemd.enable = true;

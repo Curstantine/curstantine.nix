@@ -1,11 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.username = "curstantine";
   home.homeDirectory = "/home/curstantine";
   home.stateVersion = "25.05";
   home.packages = with pkgs; [
-    chromium
-    vivaldi
     vial
     qbittorrent
     gimp
@@ -31,8 +29,8 @@
     };
   };
 
-  # Only enable chromium profiles
   programs.chromium.enable = true;
+  programs.chromium.package = pkgs.vivaldi;
   programs.firefox.enable = true;
 
   programs.vesktop.enable = true;
@@ -48,6 +46,7 @@
     ../modules/fonts.nix
     ../modules/fish.nix
     ../modules/gpg.nix
+    ../modules/helium.nix
     ../modules/helix.nix
     ../modules/jetbrains.nix
     ../modules/android.nix
