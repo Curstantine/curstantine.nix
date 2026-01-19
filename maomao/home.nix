@@ -29,8 +29,8 @@
     };
   };
 
-  programs.chromium.enable = true;
-  programs.chromium.package = pkgs.vivaldi;
+  # programs.chromium.enable = true;
+  # programs.chromium.package = pkgs.vivaldi;
   programs.firefox.enable = true;
 
   programs.vesktop.enable = true;

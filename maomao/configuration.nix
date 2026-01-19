@@ -26,6 +26,12 @@
     "udev.log_priority=3"
     "rd.systemd.show_status=auto"
     "amdgpu.gpu_recovery=1"
+
+    # zswap
+    "zswap.enabled=1"
+    "zswap.compressor=lz4"
+    "zswap.max_pool_percent=25"
+    "zswap.shrinker_enabled=1"
   ];
 
   # Plymouth
