@@ -52,5 +52,6 @@
     ../modules/android.nix
     ../modules/vicinae.nix
     ../modules/fooyin/fooyin.nix
+    ../modules/games.nix
   ];
 }
