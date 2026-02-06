@@ -17,7 +17,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.consoleLogLevel = 3;
-  boot.loader.timeout = 0;
+  boot.loader.timeout = 2;
   boot.loader.systemd-boot.consoleMode = "2";
   boot.kernelParams = [
     "quiet"
@@ -38,9 +38,7 @@
   # boot.plymouth.enable = true;
 
   networking.hostName = "maomao";
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Colombo";
@@ -56,8 +54,14 @@
     font = "Lat2-Terminus16";
   };
 
-  # DM Setup (KDE)
+  # DM Setup (ly)
   services.displayManager.ly.enable = true;
+  systemd.services.display-manager.environment.XDG_CURRENT_DESKTOP = "X-NIXOS-SYSTEMD-AWARE"; # https://github.com/NixOS/nixpkgs/pull/297434#issuecomment-2348783988
+
+  # gnome-keyring for ly
+  security.pam.services.ly.enableGnomeKeyring = true;
+
+  # WM Setup (Hyprland)
   programs.hyprland.enable = true;
   programs.hyprland.withUWSM = true;
 

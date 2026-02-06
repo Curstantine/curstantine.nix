@@ -1,0 +1,8 @@
+{ pkgs, ... }:
+{
+  services.gnome-keyring.enable = true;
+  home.packages = with pkgs; [
+    gcr
+    seahorse
+  ]; # Provides org.gnome.keyring.SystemPrompter
+}

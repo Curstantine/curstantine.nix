@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     hyprpaper
@@ -17,14 +17,13 @@
 
   services.hyprpaper.enable = true;
   services.hypridle.enable = true;
-  services.hyprlauncher.enable = true;
   services.hyprpolkitagent.enable = true;
 
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = "SUPER";
     "$terminal" = "ghostty";
     "$fileManager" = "dolphin";
-    "$menu" = "hyprlauncher";
+    "$menu" = "vicinae toggle";
 
     monitorv2 = [
       {
@@ -44,6 +43,7 @@
     exec-once = [
       "uwsm app -- hyprpaper"
       "uwsm app -- mako"
+      "uwsm app -- ashell"
       "uwsm app -- wl-paste --type text --watch cliphist store" # Stores only text data
       "uwsm app -- wl-paste --type image --watch cliphist store" # Stores only image data
     ];
@@ -71,6 +71,7 @@
     misc = {
       force_default_wallpaper = 1;
       disable_hyprland_logo = true;
+      focus_on_activate = true;
     };
 
     input = {
@@ -80,6 +81,13 @@
       follow_mouse = 1;
       accel_profile = "flat";
       sensitivity = 0;
+    };
+
+    layerrule = {
+      name = "vicinae-blur";
+      blur = "on";
+      ignore_alpha = 0;
+      match.namespace = "vicinae";
     };
 
     bind = [
@@ -112,6 +120,9 @@
 
       # Switch to resize submap
       "ALT, R, submap, resize"
+
+      # Vicinae clipboard history
+      "$mainMod SHIFT, V, exec, vicinae vicinae://extensions/vicinae/clipboard/history"
     ]
     ++ (
       # workspaces
@@ -135,7 +146,6 @@
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewindow"
     ];
-
   };
 
   wayland.windowManager.hyprland.submaps.resize.settings = {
