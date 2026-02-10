@@ -16,12 +16,12 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.verbose = false;
   boot.consoleLogLevel = 3;
   boot.loader.timeout = 0;
   boot.loader.systemd-boot.consoleMode = "2";
   boot.kernelParams = [
     "quiet"
-    "splash"
     "boot.shell_on_fail"
     "udev.log_priority=3"
     "rd.systemd.show_status=auto"
@@ -35,7 +35,7 @@
   ];
 
   # Plymouth
-  # boot.plymouth.enable = true;
+  boot.plymouth.enable = true;
 
   networking.hostName = "maomao";
   # Pick only one of the below networking options.
