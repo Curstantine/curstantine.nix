@@ -34,6 +34,13 @@
     "zswap.shrinker_enabled=1"
   ];
 
+  # Nvidia
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = true;
+  hardware.nvidia.nvidiaSettings = true;
+  hardware.nvidia.modesetting.enable = true;
+
   # Plymouth
   boot.plymouth.enable = true;
 
@@ -126,6 +133,9 @@
     kdePackages.kcolorchooser
     kdePackages.sddm-kcm
     kdePackages.partitionmanager
+
+    # Nvidia
+    lact
   ];
 
   # Exclude extra apps installed by Plasma
@@ -143,11 +153,16 @@
     ];
   };
 
+  services.lact.enable = true;
+
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 3000 ];
+  networking.firewall.allowedTCPPorts = [
+    3000
+    4096
+  ];
   networking.wireguard.enable = true;
 
   # networking.firewall.allowedUDPPorts = [ ... ];

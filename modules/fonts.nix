@@ -4,5 +4,6 @@
     jetbrains-mono
     ibm-plex
     roboto
+    rubik
   ];
 }
