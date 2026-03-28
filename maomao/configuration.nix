@@ -41,6 +41,11 @@
   hardware.nvidia.nvidiaSettings = true;
   hardware.nvidia.modesetting.enable = true;
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.settings = {
+    General.Experimental = true;
+  };
+
   # Plymouth
   boot.plymouth.enable = true;
 

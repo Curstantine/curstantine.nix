@@ -60,7 +60,7 @@
                                                             "SearchBar": {
                                                                 "AutoSearch": true,
                                                                 "SearchMode": 0,
-                                                                "Widgets": "38f5e08d2dc248349731dce681e3ca84"
+                                                                "Widgets": "38f5e08d2dc248349731dce681e3ca84|b1c88ebef920442da04ad47b432b7eb2"
                                                             }
                                                         },
                                                         {
@@ -74,13 +74,13 @@
                                                                             "Captions": 1,
                                                                             "Columns": "1",
                                                                             "Display": 0,
-                                                                            "Group": "Default",
+                                                                            "Group": "d0e965ca97aa4cd896151a8418ba4987",
                                                                             "ID": "b1c88ebef920442da04ad47b432b7eb2",
-                                                                            "Index": 0,
+                                                                            "Index": 1,
                                                                             "ShowHeader": true,
                                                                             "ShowScrollbar": true,
                                                                             "ShowSummary": true,
-                                                                            "State": "AAAAJXjaY2BgYGRgYHjJAKFBgNH+A5QBFWAAAC75Ah0="
+                                                                            "State": "AAAAJXjaY2BgYGRgYPjKAKFBgNH+A5QBFWAAADBhAik="
                                                                         }
                                                                     },
                                                                     {
@@ -90,13 +90,13 @@
                                                                             "Captions": 1,
                                                                             "Columns": "3|1",
                                                                             "Display": 1,
-                                                                            "Group": "Default",
+                                                                            "Group": "d0e965ca97aa4cd896151a8418ba4987",
                                                                             "ID": "38f5e08d2dc248349731dce681e3ca84",
-                                                                            "Index": 1,
+                                                                            "Index": 0,
                                                                             "ShowHeader": true,
                                                                             "ShowScrollbar": true,
-                                                                            "ShowSummary": false,
-                                                                            "State": "AAAANXjaY2BgYGJgYPzAwMDwgwHMBgNGENv+aSgY2F+F0IwwSQDEHAgn"
+                                                                            "ShowSummary": true,
+                                                                            "State": "AAAANXjaY2BgYGJgYPwPxDwMYDYYMILY9k/+2vtf/vLX/hprY0KEGCsjVJIBAMb5CPY="
                                                                         }
                                                                     }
                                                                 ]
@@ -123,8 +123,8 @@
                                                                     },
                                                                     {
                                                                         "Playlist": {
-                                                                            "Columns": "8:132|3|0:2|1|7:2",
-                                                                            "HeaderState": "AAAAZXjaY2BgYGVgYBBlYGB0AdJ2QFoLSPsxQMRBgBGImYCYGYhZQOL2s6NvvGr4pWx/q9jC+LlPu/2Wqofu60Sq7W8Evm6V2xFkv3MmCMwCaWT4DwQAybgZzg==",
+                                                                            "Columns": "8:132|3|0:2|1|7:2|2",
+                                                                            "HeaderState": "AAAAdXjaY2BgYGNgYBBhYGBUBtIWQJoHSLsBcSkDRA4EmICYGYhZgZgRiFlAcvbTi33Mtm+8Yn9t9XP2V5cf2m/sfbpavd7V/sqNht12zxXtt36MF/0YL2Z/yFNlEhCBNDL8BwIA4jcdzA==",
                                                                             "ID": "4ab2daf530714737b73d3b8840932170",
                                                                             "Preset": 0,
                                                                             "SingleMode": false
@@ -149,9 +149,5 @@
                 ]
             }
         }
-    ],
-    "WindowSize": {
-        "Height": 1767,
-        "Width": 1032
-    }
+    ]
 }
