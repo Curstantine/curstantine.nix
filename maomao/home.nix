@@ -20,15 +20,6 @@
     signing.signByDefault = true;
   };
 
-  programs.ghostty = {
-    enable = true;
-    enableFishIntegration = true;
-    settings = {
-      theme = "Sonokai";
-      font-size = 11;
-    };
-  };
-
   # programs.chromium.enable = true;
   # programs.chromium.package = pkgs.vivaldi;
   programs.firefox.enable = true;
@@ -45,6 +36,7 @@
   imports = [
     ../modules/fonts.nix
     ../modules/fish.nix
+    ../modules/ghostty.nix
     ../modules/gpg.nix
     ../modules/helium.nix
     ../modules/helix.nix
