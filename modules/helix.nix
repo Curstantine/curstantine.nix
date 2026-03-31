@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.helix = {
     enable = true;
     defaultEditor = true;
     settings = {
-      theme = "base16_default_dark";
+      theme = "base16_default";
     };
     languages = {
       language = [
