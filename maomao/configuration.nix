@@ -36,6 +36,7 @@
 
   # Nvidia
   hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
   hardware.nvidia.nvidiaSettings = true;
@@ -147,6 +148,7 @@
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     elisa
     konsole
+    krunner
   ];
 
   # List services that you want to enable:
@@ -164,10 +166,25 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [
-    3000
-    4096
-  ];
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [
+      3000
+      4096
+    ];
+    allowedTCPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
+    allowedUDPPortRanges = [
+      {
+        from = 1714;
+        to = 1764;
+      }
+    ];
+  };
   networking.wireguard.enable = true;
 
   # networking.firewall.allowedUDPPorts = [ ... ];

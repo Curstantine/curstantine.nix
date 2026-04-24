@@ -9,7 +9,6 @@
     gimp
     picard
     btop-cuda
-    (bottles.override { removeWarningPopup = true; })
   ];
 
   programs.git = {
@@ -32,6 +31,8 @@
 
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
+
+  services.kdeconnect.enable = true;
 
   imports = [
     ../modules/fonts.nix
