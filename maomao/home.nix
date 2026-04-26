@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   home.username = "curstantine";
   home.homeDirectory = "/home/curstantine";
@@ -22,11 +22,11 @@
   # programs.chromium.enable = true;
   # programs.chromium.package = pkgs.vivaldi;
   programs.firefox.enable = true;
+  programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox"; # 26.05 migration
 
   programs.vesktop.enable = true;
   programs.obs-studio.enable = true;
 
-  programs.zed-editor.enable = true;
   programs.vscode.enable = true;
 
   programs.direnv.enable = true;
@@ -41,6 +41,7 @@
     ../modules/gpg.nix
     ../modules/helium.nix
     ../modules/helix.nix
+    ../modules/zed.nix
     ../modules/jetbrains.nix
     ../modules/android.nix
     ../modules/vicinae.nix
