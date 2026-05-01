@@ -9,6 +9,7 @@
     gimp
     picard
     btop-cuda
+    vlc
   ];
 
   programs.git = {

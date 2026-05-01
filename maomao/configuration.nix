@@ -132,7 +132,6 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     wget
-    mpv
     helix
 
     # KDE
@@ -149,6 +148,7 @@
     elisa
     konsole
     krunner
+    kate
   ];
 
   # List services that you want to enable:
@@ -172,6 +172,8 @@
       3000
       4096
     ];
+
+    # 1714-1764 are used by KDE Connect
     allowedTCPPortRanges = [
       {
         from = 1714;
