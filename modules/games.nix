@@ -8,7 +8,7 @@
   programs.mangohud = {
     enable = true;
     settingsPerApplication = {
-      "wine-ACU" = {
+      "wine-ACS" = {
         position = "bottom-left";
         table_columns = 4;
 

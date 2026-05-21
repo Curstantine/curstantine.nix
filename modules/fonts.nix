@@ -5,5 +5,6 @@
     ibm-plex
     roboto
     rubik
+    noto-fonts-cjk-sans
   ];
 }
