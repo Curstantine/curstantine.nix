@@ -37,6 +37,7 @@
 
   imports = [
     ../modules/fonts.nix
+    ../modules/lucidglyph.nix
     ../modules/fish.nix
     ../modules/ghostty.nix
     ../modules/gpg.nix
