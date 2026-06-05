@@ -128,6 +128,9 @@
   programs.nix-ld.enable = true;
   programs.steam.enable = true;
 
+  # V2Ray
+  services.v2raya.enable = true;
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
