@@ -108,6 +108,8 @@
     extraGroups = [
       "wheel"
       "kvm"
+      # "libvirtd"
+      "podman"
     ];
     useDefaultShell = true;
   };
@@ -131,6 +133,24 @@
   # V2Ray
   services.v2raya.enable = true;
 
+  # Podman
+  virtualisation = {
+    containers.enable = true;
+    containers.registries.search = [ "docker.io" ];
+  };
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
+  };
+
+  # QEMU
+  # virtualisation.libvirtd = {
+  #   enable = true;
+  #   qemu.swtpm.enable = true;
+  # };
+  # virtualisation.spiceUSBRedirection.enable = true;
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -144,6 +164,10 @@
 
     # Nvidia
     lact
+
+    # QEMU
+    # gnome-boxes
+    # dnsmasq
   ];
 
   # Exclude extra apps installed by Plasma

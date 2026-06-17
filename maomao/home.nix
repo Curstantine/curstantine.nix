@@ -10,6 +10,12 @@
     picard
     btop-cuda
     vlc
+    # (cutter.withPlugins (
+    #   ps: with ps; [
+    #     jsdec
+    #     rz-ghidra
+    #   ]
+    # ))
   ];
 
   programs.git = {
