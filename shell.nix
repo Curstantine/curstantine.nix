@@ -2,8 +2,8 @@
   pkgs ? import <nixpkgs> { },
 }:
 pkgs.mkShell {
-  nativeBuildInputs = with pkgs.buildPackages; [
-    nil
+  packages = with pkgs; [
+    nixd
     nixfmt
   ];
 }

@@ -36,9 +36,6 @@
 
   programs.vscode.enable = true;
 
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
-
   services.kdeconnect.enable = true;
 
   imports = [
@@ -53,6 +50,7 @@
     ../modules/jetbrains.nix
     ../modules/android.nix
     ../modules/vicinae.nix
+    ../modules/devshell.nix
     ../modules/fooyin/fooyin.nix
     ../modules/games.nix
   ];

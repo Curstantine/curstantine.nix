@@ -14,6 +14,7 @@
   outputs =
     inputs@{ self, nixpkgs, ... }:
     {
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
       nixosConfigurations.maomao = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
