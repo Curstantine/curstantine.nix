@@ -38,9 +38,12 @@
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;
-  hardware.nvidia.nvidiaSettings = true;
-  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia = {
+    open = true;
+    nvidiaSettings = true;
+    modesetting.enable = true;
+    powerManagement.enable = true;
+  };
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.settings = {

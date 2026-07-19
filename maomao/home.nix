@@ -51,6 +51,7 @@
     ../modules/android.nix
     ../modules/vicinae.nix
     ../modules/devshell.nix
+    ../modules/ollama.nix
     ../modules/fooyin/fooyin.nix
     ../modules/games.nix
   ];
