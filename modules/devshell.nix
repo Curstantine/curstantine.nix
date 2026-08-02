@@ -53,7 +53,7 @@ in
         fi
 
         mkdir -p "$TARGET"
-        cp "$TEMPLATE" "$TARGET/flake.nix"
+        cp "$TEMPLATE" "$TARGET/flake.nix" --no-preserve all
         echo "use flake" > "$TARGET/.envrc"
 
         echo "Created devshell at $TARGET"
