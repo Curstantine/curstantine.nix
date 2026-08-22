@@ -143,10 +143,7 @@
   services.v2raya.enable = true;
 
   # Podman
-  virtualisation = {
-    containers.enable = true;
-    containers.registries.search = [ "docker.io" ];
-  };
+  virtualisation.containers.enable = true;
   virtualisation.podman = {
     enable = true;
     defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
