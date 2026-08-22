@@ -3,16 +3,11 @@
   programs.gpg.enable = true;
   programs.ssh = {
     enable = true;
-    matchBlocks = {
+    enableDefaultConfig = false;
+    settings = {
       "141.11.100.152" = {
-        setEnv = {
-          TERM = "xterm-256color";
-        };
-        sendEnv = [
-          "COLORTERM"
-          "TERM_PROGRAM"
-          "TERM_PROGRAM_VERSION"
-        ];
+        SetEnv = ''TERM="xterm-256color"'';
+        SendEnv = "COLORTERM TERM_PROGRAM TERM_PROGRAM_VERSION";
       };
     };
   };
