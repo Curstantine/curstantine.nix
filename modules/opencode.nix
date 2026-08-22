@@ -4,7 +4,10 @@
   programs.opencode = {
     enable = true;
     web.enable = true;
-
+    web.extraArgs = [
+      "--port"
+      "4096"
+    ];
     agents.autonomous = ''
       ---
       mode: primary
