@@ -112,12 +112,19 @@ in
   # Open ports in the firewall.
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 ];
+    allowedTCPPorts = [
+      22
+      4096
+      5173
+    ];
+    allowedUDPPorts = [
+      config.services.tailscale.port
+      4096
+      5173
+    ];
 
     # Always allow traffic from your Tailscale network
     trustedInterfaces = [ config.services.tailscale.interfaceName ];
-    # Allow the Tailscale UDP port through the firewall
-    allowedUDPPorts = [ config.services.tailscale.port ];
   };
 
   system.stateVersion = "26.05";
