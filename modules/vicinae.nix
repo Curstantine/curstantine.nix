@@ -4,7 +4,7 @@
   programs.vicinae.systemd.enable = true;
 
   programs.vicinae.settings = {
-    launcher_window.opacity = 1;
-    launcher_window.blur.enabled = false;
+    launcher_window.opacity = 0.9;
+    launcher_window.material = "blurred";
   };
 }

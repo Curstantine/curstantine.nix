@@ -2,7 +2,12 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  config,
+  inputs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -143,7 +148,6 @@
   };
   virtualisation.podman = {
     enable = true;
-    dockerCompat = true;
     defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
   };
 
@@ -195,6 +199,20 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
+  # Tailscale
+  services.tailscale.enable = true;
+  networking.nftables.enable = true;
+
+  # Force tailscaled to use nftables (Critical for clean nftables-only systems)
+  # This avoids the "iptables-compat" translation layer issues.
+  systemd.services.tailscaled.serviceConfig.Environment = [
+    "TS_DEBUG_FIREWALL_MODE=nftables"
+  ];
+
+  # Optimization: Prevent systemd from waiting for network online
+  systemd.network.wait-online.enable = false;
+  boot.initrd.systemd.network.wait-online.enable = false;
+
   # Open ports in the firewall.
   networking.firewall = {
     enable = true;
@@ -202,6 +220,11 @@
       3000
       4096
     ];
+
+    # Always allow traffic from your Tailscale network
+    trustedInterfaces = [ config.services.tailscale.interfaceName ];
+    # Allow the Tailscale UDP port through the firewall
+    allowedUDPPorts = [ config.services.tailscale.port ];
 
     # 1714-1764 are used by KDE Connect
     allowedTCPPortRanges = [
