@@ -14,8 +14,8 @@
 
   imports = [
     ../modules/fish.nix
-    ../modules/gpg.nix
     ../modules/helix.nix
     ../modules/devshell.nix
+    ../modules/opencode.nix
   ];
 }
