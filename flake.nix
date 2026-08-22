@@ -38,7 +38,7 @@
                 "flakes"
               ];
             }
-            ./alice/configuration.nix
+            ./menow/configuration.nix
           ];
         };
       };
