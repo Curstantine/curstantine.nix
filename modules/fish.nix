@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   home.packages = with pkgs; [
     fish
@@ -9,11 +9,8 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
+      set -q FLAKE_SOURCE_DIR; or set -gx FLAKE_SOURCE_DIR "${config.home.homeDirectory}/Code/Personal/curstantine.nix"
     '';
-    shellAliases = {
-      sys-update = "nix flake update --flake ~/Code/Personal/curstantine.nix";
-      sys-switch = "doas nixos-rebuild switch --flake ~/Code/Personal/curstantine.nix";
-    };
     plugins = [
       {
         name = "grc";
@@ -46,6 +43,21 @@
     };
 
     functions = {
+      sys-update = {
+        description = "Update the Nix flake lock file";
+        body = ''
+          nix flake update --flake "$FLAKE_SOURCE_DIR"
+        '';
+      };
+
+      sys-switch = {
+        description = "Switch to this host's NixOS configuration";
+        body = ''
+          set -l host (hostnamectl --static)
+          doas nixos-rebuild switch --flake "$FLAKE_SOURCE_DIR#$host"
+        '';
+      };
+
       cdcd = {
         description = "Navigate to code loctations easily";
         argumentNames = "base_directory project_name";
