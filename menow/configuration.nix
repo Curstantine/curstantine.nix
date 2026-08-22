@@ -20,6 +20,24 @@ in
   networking.hostName = "alice";
   networking.networkmanager.enable = false;
 
+  # Manually assign IPs to the NIC since DHCP doesn't work correctly.
+  networking = {
+    useDHCP = false;
+    interfaces.ens3 = {
+      ipv4.addresses = [
+        {
+          address = "141.11.100.152";
+          prefixLength = 24;
+        }
+      ];
+    };
+    defaultGateway = "141.11.100.1";
+    nameservers = [
+      "1.1.1.1"
+      "8.8.8.8"
+    ];
+  };
+
   time.timeZone = "Europe/Amsterdam";
   console.keyMap = "dvorak";
 
@@ -51,6 +69,16 @@ in
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
     };
+  };
+
+  services.fail2ban = {
+    enable = true;
+    maxretry = 5;
+    bantime = "24h";
+    bantime-increment.enable = true;
+    banaction = "nftables-multiport";
+    banaction-allports = "nftables-allports";
+    jails.sshd.settings.enabled = true;
   };
 
   home-manager = {
