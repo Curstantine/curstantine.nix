@@ -7,6 +7,8 @@
     web.extraArgs = [
       "--port"
       "4096"
+      "--hostname"
+      "0.0.0.0"
     ];
     agents.autonomous = ''
       ---
