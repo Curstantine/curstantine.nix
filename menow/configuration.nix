@@ -17,7 +17,7 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "alice";
+  networking.hostName = "menow";
   networking.networkmanager.enable = false;
 
   # Manually assign IPs to the NIC since DHCP doesn't work correctly.

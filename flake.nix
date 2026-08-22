@@ -29,7 +29,7 @@
           ];
         };
 
-        alice = nixpkgs.lib.nixosSystem {
+        menow = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
             {
