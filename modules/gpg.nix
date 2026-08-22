@@ -6,7 +6,7 @@
     enableDefaultConfig = false;
     settings = {
       "141.11.100.152" = {
-        SetEnv = ''TERM="xterm-256color"'';
+        SetEnv.TERM = "xterm-256color";
         SendEnv = "COLORTERM TERM_PROGRAM TERM_PROGRAM_VERSION";
       };
     };
