@@ -10,6 +10,11 @@
       "--hostname"
       "0.0.0.0"
     ];
+    settings = {
+      default_agent = "autonomous";
+      model = "deepseek/deepseek-v4-flash";
+    };
+
     agents.autonomous = ''
       ---
       mode: primary

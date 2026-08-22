@@ -56,6 +56,7 @@ in
   users.defaultUserShell = pkgs.fish;
   users.users.alice = {
     isNormalUser = true;
+    linger = true;
     extraGroups = [ "wheel" ];
     useDefaultShell = true;
     openssh.authorizedKeys.keys = [ keys.curstantine ];
