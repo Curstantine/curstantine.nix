@@ -4,6 +4,9 @@
   config,
   ...
 }:
+let
+  keys = import ../keys.nix;
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -17,12 +20,8 @@
   networking.hostName = "alice";
   networking.networkmanager.enable = false;
 
-  time.timeZone = "Asia/Colombo";
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  time.timeZone = "Europe/Amsterdam";
+  console.keyMap = "dvorak";
 
   security.doas.enable = true;
   security.sudo.enable = false;
@@ -39,8 +38,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     useDefaultShell = true;
-    # Add your public SSH key before disabling password authentication:
-    # openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAA..." ];
+    openssh.authorizedKeys.keys = [ keys.curstantine ];
   };
 
   programs.fish.enable = true;
@@ -48,7 +46,11 @@
 
   services.openssh = {
     enable = true;
-    settings.PermitRootLogin = "no";
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+    };
   };
 
   home-manager = {
@@ -88,5 +90,5 @@
     allowedUDPPorts = [ config.services.tailscale.port ];
   };
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "26.05";
 }
