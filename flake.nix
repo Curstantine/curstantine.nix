@@ -31,7 +31,15 @@
 
         alice = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
-          modules = [ ./alice/configuration.nix ];
+          modules = [
+            {
+              nix.settings.experimental-features = [
+                "nix-command"
+                "flakes"
+              ];
+            }
+            ./alice/configuration.nix
+          ];
         };
       };
     };
