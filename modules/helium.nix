@@ -1,4 +1,10 @@
 { inputs, pkgs, ... }:
 {
-  home.packages = [ inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default ];
+  imports = [ inputs.helium.homeModules.default ];
+  programs.helium = {
+    enable = true;
+    flags = [
+      "--disable-features=WaylandWpColorManagerV1"
+    ];
+  };
 }
