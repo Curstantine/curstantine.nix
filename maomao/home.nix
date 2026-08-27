@@ -10,10 +10,6 @@
     picard
     btop-cuda
     vlc
-    # (blender.override {
-    #   config.cudaSupport = true;
-    #   config.rocmSupport = false;
-    # })
     # (cutter.withPlugins (
     #   ps: with ps; [
     #     jsdec
@@ -58,5 +54,6 @@
     ../modules/ollama.nix
     ../modules/fooyin/fooyin.nix
     ../modules/games.nix
+    ../modules/blender.nix
   ];
 }

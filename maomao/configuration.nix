@@ -40,6 +40,8 @@
     "zswap.shrinker_enabled=1"
   ];
 
+  hardware.i2c.enable = true;
+
   # Nvidia
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
@@ -243,6 +245,16 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  # Binary cache
+  nix.settings = {
+    trusted-users = [ "curstantine" ];
+    substituters = [
+      "https://cache.nixos.org"
+      "https://cache.nixos-cuda.org"
+    ];
+    trusted-public-keys = [ "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M=" ];
+  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
