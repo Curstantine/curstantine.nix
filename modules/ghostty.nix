@@ -10,7 +10,9 @@
       window-padding-y = 0;
       window-theme = "ghostty";
       gtk-wide-tabs = false;
-      window-titlebar-background = "#292c30";
+      window-titlebar-background = "#292a30";
+
+      window-step-resize = false;
     };
   };
 }
