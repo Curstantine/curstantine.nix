@@ -1,0 +1,189 @@
+{
+    "Name": "Horizontal",
+    "Options": {
+        "ApplyWindowSize": false
+    },
+    "Version": 1,
+    "Widgets": [
+        {
+            "SplitterVertical": {
+                "State": "AAAA/wAAAAEAAAACAAAAHAAAA9MA/////wEAAAACAA==",
+                "Widgets": [
+                    {
+                        "SplitterHorizontal": {
+                            "State": "AAAA/wAAAAEAAAACAAAAhAAAA50A/////wEAAAABAA==",
+                            "Widgets": [
+                                {
+                                    "PlayerControls": {
+                                        "ShowNext": true,
+                                        "ShowPlayPause": true,
+                                        "ShowPrevious": true,
+                                        "ShowRandomTrack": false,
+                                        "ShowStop": true
+                                    }
+                                },
+                                {
+                                    "SplitterHorizontal": {
+                                        "State": "AAAA/wAAAAEAAAAEAAAAFQAAAuwAAAAVAAAAcAD/////AQAAAAEA",
+                                        "Widgets": [
+                                            {
+                                                "Spacer": {}
+                                            },
+                                            {
+                                                "SeekBar": {
+                                                    "ShowLabels": true,
+                                                    "ShowRemainingTime": true
+                                                }
+                                            },
+                                            {
+                                                "Spacer": {}
+                                            },
+                                            {
+                                                "WaveBar": {
+                                                    "BarGap": 0,
+                                                    "BarWidth": 1,
+                                                    "CentreGap": 0,
+                                                    "ChannelScale": 0.9,
+                                                    "CursorWidth": 3,
+                                                    "DecibelScale": false,
+                                                    "Downmix": 0,
+                                                    "MaxScale": 1,
+                                                    "Mode": 2,
+                                                    "NormaliseToPeak": false,
+                                                    "PeakDisplayMode": 0,
+                                                    "ShowCursor": true,
+                                                    "ShowLabels": false,
+                                                    "ShowRemainingTime": false,
+                                                    "SupersampleFactor": 1,
+                                                    "UseCustomColours": false
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "SplitterHorizontal": {
+                            "State": "AAAA/wAAAAEAAAADAAAFNQAAAAIAAAI7AP////8BAAAAAQA=",
+                            "Widgets": [
+                                {
+                                    "SplitterVertical": {
+                                        "State": "AAAA/wAAAAEAAAACAAAAJwAAAr4A/////wEAAAACAA==",
+                                        "Widgets": [
+                                            {
+                                                "SearchBar": {
+                                                    "AutoSearch": true,
+                                                    "SearchMode": 0,
+                                                    "ShowAll": false,
+                                                    "Widgets": "38f5e08d2dc248349731dce681e3ca84|b1c88ebef920442da04ad47b432b7eb2"
+                                                }
+                                            },
+                                            {
+                                                "SplitterHorizontal": {
+                                                    "State": "AAAA/wAAAAEAAAACAAABCQAABmoA/////wEAAAABAA==",
+                                                    "Widgets": [
+                                                        {
+                                                            "LibraryFilter": {
+                                                                "AlignCaptionsToArtwork": true,
+                                                                "AlternatingRows": false,
+                                                                "Artwork": 0,
+                                                                "ArtworkCornerRadius": 0,
+                                                                "AutoSwitch": true,
+                                                                "Captions": 1,
+                                                                "Columns": "1",
+                                                                "Display": 0,
+                                                                "DoubleClickAction": 1,
+                                                                "FilterSource": 0,
+                                                                "Group": "d0e965ca97aa4cd896151a8418ba4987",
+                                                                "ID": "b1c88ebef920442da04ad47b432b7eb2",
+                                                                "IconHeight": 98,
+                                                                "IconHorizontalGap": -1,
+                                                                "IconVerticalGap": 10,
+                                                                "IconWidth": 98,
+                                                                "Index": 1,
+                                                                "KeepAlive": false,
+                                                                "MiddleClickAction": 0,
+                                                                "PlaylistEnabled": true,
+                                                                "PlaylistName": "Filter Results",
+                                                                "RowHeight": 0,
+                                                                "SendPlayback": true,
+                                                                "ShowHeader": true,
+                                                                "ShowScrollbar": true,
+                                                                "ShowSummary": true,
+                                                                "Source": -1,
+                                                                "State": "AAAAJXjaY2BgYGRgYFjCAKFBgNH+A5QBFWAAACbjAdg="
+                                                            }
+                                                        },
+                                                        {
+                                                            "LibraryFilter": {
+                                                                "AlignCaptionsToArtwork": true,
+                                                                "AlternatingRows": false,
+                                                                "Artwork": 0,
+                                                                "ArtworkCornerRadius": 0,
+                                                                "AutoSwitch": true,
+                                                                "Captions": 1,
+                                                                "Columns": "3|1",
+                                                                "Display": 1,
+                                                                "DoubleClickAction": 1,
+                                                                "FilterSource": 0,
+                                                                "Group": "d0e965ca97aa4cd896151a8418ba4987",
+                                                                "ID": "38f5e08d2dc248349731dce681e3ca84",
+                                                                "IconHeight": 98,
+                                                                "IconHorizontalGap": -1,
+                                                                "IconVerticalGap": 10,
+                                                                "IconWidth": 98,
+                                                                "Index": 0,
+                                                                "KeepAlive": false,
+                                                                "MiddleClickAction": 0,
+                                                                "PlaylistEnabled": true,
+                                                                "PlaylistName": "Filter Results",
+                                                                "RowHeight": 0,
+                                                                "SendPlayback": true,
+                                                                "ShowHeader": true,
+                                                                "ShowScrollbar": true,
+                                                                "ShowSummary": true,
+                                                                "Source": -1,
+                                                                "State": "AAAANXjaY2BgYAKiRwwMjM0MYDYYMILY9k/+2vtf/vLX/hprY0KEGCsjTBIA1XkJUg=="
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "Spacer": {}
+                                },
+                                {
+                                    "SplitterVertical": {
+                                        "State": "AAAA/wAAAAEAAAACAAAACAAAA7MA/////wEAAAACAA==",
+                                        "Widgets": [
+                                            {
+                                                "Spacer": {}
+                                            },
+                                            {
+                                                "Playlist": {
+                                                    "Columns": "8:132|3|0:2|1|7:2",
+                                                    "HeaderState": "AAAAZXjaY2BgYGVgYBAB4hdArAvEN4DYkgEiDgJMQMwMxIxAzAISt18oERMQ8VTY/hbrK4sW+3b7LVUP3deJVNvfCHzdKrcjyH7nTBCYBdLA8B8IAN8iGTA=",
+                                                    "ID": "0aba40f502b44fa2bfbc2439ed8560a1",
+                                                    "Preset": 0,
+                                                    "SingleMode": false
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "StatusBar": {}
+                    }
+                ]
+            }
+        }
+    ]
+}
