@@ -18,6 +18,14 @@
     "xcode-themes"
   ];
   programs.zed-editor.userSettings = {
+    agent_servers.antigravity-acp = {
+      type = "registry";
+      default_config_options = {
+        mode = "yolo";
+        model = "gemini-3.8-flash-high";
+      };
+    };
+
     tab_size = 4;
     ui_font_size = 14;
     buffer_font_size = 14;
@@ -41,6 +49,42 @@
       dock = "right";
       sidebar_side = "right";
       play_sound_when_agent_done = "when_hidden";
+      terminal_init_command = "";
+      default_profile = "write";
+
+      sandbox_permissions.allow_unsandboxed = true;
+
+      tool_permissions.tools = {
+        edit_file = {
+          always_allow = [ { pattern = "./"; } ];
+          always_deny = [ { pattern = "./**/(target|dist|node_modules)/**/*"; } ];
+        };
+        create_directory = {
+          always_allow = [ { pattern = "./"; } ];
+          always_deny = [ { pattern = "./**/(target|dist|node_modules)/**/*"; } ];
+        };
+        skill.default = "allow";
+        search_web.default = "allow";
+        fetch.default = "allow";
+        write_file = {
+          always_allow = [ { pattern = "./"; } ];
+          always_deny = [ { pattern = "./**/(target|dist|node_modules)/**/*"; } ];
+        };
+        terminal.always_allow = [
+          { pattern = "^pnpm\\s(run\\s)?(build|dev|test|lint|fmt)"; }
+          { pattern = "^cargo\\s(build|test|check|clippy)"; }
+          { pattern = "^grep\\b"; }
+          { pattern = "^sed\\b"; }
+          { pattern = "git.?(--no-pager)?\\sdiff"; }
+          { pattern = "^ls node_modules/"; }
+          { pattern = "^head\\b"; }
+          { pattern = "^echo\\s+===(\\s|$)"; }
+          { pattern = "^find\\s+node_modules/@tresjs/cientos(\\s|$)"; }
+          { pattern = "^xargs\\s+grep(\\s|$)"; }
+          { pattern = "^echo\\b"; }
+          { pattern = "^find\\s+node_modules/@tresjs/cientos/dist(\\s|$)"; }
+        ];
+      };
 
       inline_assistant_model = {
         provider = "deepseek";
@@ -49,9 +93,8 @@
       };
 
       commit_message_model = {
-        provider = "deepseek";
-        model = "deepseek-v4-flash";
-        effort = "high";
+        provider = "ollama";
+        model = "lfm2.5-thinking";
         enable_thinking = false;
       };
       commit_message_instructions = "**Write a concise, descriptive commit message using feat:/chore:/fix:/docs:/style:/refactor:/perf:/test: prefixes. For monorepos, scope the module like feat(web):; if multiple modules are touched, omit the scope. Keep the first line under 75 chars, then a blank line, then a brief body explaining changes and any caveats.**";
@@ -82,6 +125,8 @@
         "!nil"
       ];
     };
+
+    file_types.XML = [ "*.svg" ];
 
     lsp = {
       dart.settings.enableSdkFormatter = false;
