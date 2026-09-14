@@ -9,6 +9,9 @@
 
     helium.url = "github:oxcl/nix-flake-helium-browser";
     helium.inputs.nixpkgs.follows = "nixpkgs";
+
+    colorctl.url = "path:/home/curstantine/Code/Personal/colorctl";
+    colorctl.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
