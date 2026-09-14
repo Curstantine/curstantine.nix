@@ -43,7 +43,6 @@
     ../modules/lucidglyph.nix
     ../modules/fish.nix
     ../modules/ghostty.nix
-    ../modules/colorctl.nix
     ../modules/gpg.nix
     ../modules/helium.nix
     ../modules/helix.nix

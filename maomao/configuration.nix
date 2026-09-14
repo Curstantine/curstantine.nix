@@ -13,6 +13,7 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
     ../modules/gc.nix
+    ../modules/colorctl.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
