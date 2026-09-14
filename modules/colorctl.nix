@@ -18,8 +18,8 @@
     rgb = {
       enable = true;
       channel = "all";
-      color = "white";
-      brightness = 50;
+      color = "#edc2d3";
+      brightness = 5;
     };
   };
 }

@@ -9,14 +9,17 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1789394854,
-        "narHash": "sha256-yI674XVi088X9W2p+yWHgRMhQm6H4AGmzCRr++JLaaI=",
-        "path": "/home/curstantine/Code/Personal/colorctl",
-        "type": "path"
+        "lastModified": 1789393949,
+        "narHash": "sha256-yJzNd9JbpIYrlrB82q/dxvw/ZSkYjxIZs8iq03s/Jl0=",
+        "owner": "Curstantine",
+        "repo": "colorctl",
+        "rev": "c76a3764a7f912e9c39e05ba6aa4ef758ba6f7c1",
+        "type": "github"
       },
       "original": {
-        "path": "/home/curstantine/Code/Personal/colorctl",
-        "type": "path"
+        "owner": "Curstantine",
+        "repo": "colorctl",
+        "type": "github"
       }
     },
     "flake-utils": {
@@ -110,11 +113,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1789372034,
-        "narHash": "sha256-mu6atvdBHYpDsFhJkPtSsS6auSWAnWONVJMCvpL0900=",
+        "lastModified": 1781666412,
+        "narHash": "sha256-Tzgol+o9+V4lK99r4AERI4pyFoZwg6Si2xUd1wc/WQU=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "a5f41d15ba0e9442542c5324fbccd7a87105a90d",
+        "rev": "d0e019d9543f0f1215a3d961fc4dca59aa29c638",
         "type": "github"
       },
       "original": {
