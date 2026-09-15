@@ -10,14 +10,13 @@
     enable = true;
 
     fan = {
-      enable = true;
-      header = "all";
+      headers = "all";
       profile = "quiet";
     };
 
     rgb = {
-      enable = true;
-      channel = "all";
+      mode = "off";
+      channels = "all";
       color = "#edc2d3";
       brightness = 5;
     };
