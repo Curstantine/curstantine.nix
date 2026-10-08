@@ -6,6 +6,7 @@
   pkgs,
   config,
   inputs,
+  keys,
   ...
 }:
 {
@@ -40,6 +41,11 @@
     "zswap.max_pool_percent=25"
     "zswap.shrinker_enabled=1"
   ];
+
+  # UE4 games go brr
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 2147483642;
+  };
 
   hardware.i2c.enable = true;
 
@@ -124,6 +130,7 @@
       "podman"
     ];
     useDefaultShell = true;
+    openssh.authorizedKeys.keys = [ keys.curstantine ];
   };
 
   # Home Manager setup
@@ -197,8 +204,25 @@
 
   services.lact.enable = true;
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    openFirewall = false;
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+    };
+  };
+
+  services.fail2ban = {
+    enable = true;
+    maxretry = 5;
+    bantime = "24h";
+    bantime-increment.enable = true;
+    banaction = "nftables-multiport";
+    banaction-allports = "nftables-allports";
+    jails.sshd.settings.enabled = true;
+  };
 
   # Tailscale
   services.tailscale.enable = true;
@@ -221,6 +245,11 @@
       3000
       4096
     ];
+
+    # Allow local subnet to access SSH (replace 192.168.1.0/24 with your actual LAN subnet)
+    extraInputRules = ''
+      ip saddr 192.168.1.0/24 tcp dport 22 accept
+    '';
 
     # Always allow traffic from your Tailscale network
     trustedInterfaces = [ config.services.tailscale.interfaceName ];

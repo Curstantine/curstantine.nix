@@ -16,11 +16,14 @@
 
   outputs =
     inputs@{ self, nixpkgs, ... }:
+    let
+      keys = import ./keys.nix;
+    in
     {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
       nixosConfigurations = {
         maomao = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs keys; };
           modules = [
             {
               nix.settings.experimental-features = [
@@ -33,7 +36,7 @@
         };
 
         menow = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs keys; };
           modules = [
             {
               nix.settings.experimental-features = [

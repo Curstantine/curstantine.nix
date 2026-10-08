@@ -2,11 +2,9 @@
   pkgs,
   inputs,
   config,
+  keys,
   ...
 }:
-let
-  keys = import ../keys.nix;
-in
 {
   imports = [
     ./hardware-configuration.nix

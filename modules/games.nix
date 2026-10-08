@@ -22,7 +22,7 @@
       cpu_stats = true;
       cpu_temp = true;
       cpu_power = false;
-      ram = false;
+      ram = true;
 
       gpu_stats = true;
       gpu_temp = true;
