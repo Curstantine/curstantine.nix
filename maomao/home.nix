@@ -1,4 +1,9 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  inputs,
+  ...
+}:
 {
   home.username = "curstantine";
   home.homeDirectory = "/home/curstantine";
@@ -55,5 +60,12 @@
     ../modules/fooyin/fooyin.nix
     ../modules/games.nix
     ../modules/blender.nix
+
+    inputs.creativocode.homeModules.default
   ];
+
+  programs.creativocode-os = {
+    enable = true;
+    autostart = false;
+  };
 }

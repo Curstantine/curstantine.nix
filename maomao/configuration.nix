@@ -141,6 +141,10 @@
     users.curstantine = ./home.nix;
   };
 
+  nixpkgs.overlays = [
+    inputs.creativocode.overlays.default
+  ];
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.android_sdk.accept_license = true;
 

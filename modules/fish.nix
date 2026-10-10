@@ -58,6 +58,25 @@
         '';
       };
 
+      freeup = {
+        description = "Clean up storage: garbage collection, nix-store optimization, and optional btrfs balance";
+        body = ''
+          nix-collect-garbage -d
+          doas nix-collect-garbage -d
+
+          nix-store --optimize
+          doas nix-store --optimize
+
+          if test (count $argv) -gt 0
+              if string match -q -- "-*" $argv[-1]
+                  doas btrfs balance start $argv /
+              else
+                  doas btrfs balance start $argv
+              end
+          end
+        '';
+      };
+
       cdcd = {
         description = "Navigate to code loctations easily";
         argumentNames = "base_directory project_name";

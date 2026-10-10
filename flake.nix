@@ -12,6 +12,9 @@
 
     colorctl.url = "github:Curstantine/colorctl";
     colorctl.inputs.nixpkgs.follows = "nixpkgs";
+
+    creativocode.url = "/home/curstantine/Code/CreativoCode/platforms";
+    creativocode.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
