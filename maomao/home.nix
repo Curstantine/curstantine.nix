@@ -14,7 +14,9 @@
     gimp
     picard
     btop-cuda
-    vlc
+    (mpv.override {
+      scripts = [ mpvScripts.mpris ];
+    })
     # (cutter.withPlugins (
     #   ps: with ps; [
     #     jsdec
@@ -59,7 +61,7 @@
     ../modules/ollama.nix
     ../modules/fooyin/fooyin.nix
     ../modules/games.nix
-    ../modules/blender.nix
+    # ../modules/blender.nix
 
     inputs.creativocode.homeModules.default
   ];

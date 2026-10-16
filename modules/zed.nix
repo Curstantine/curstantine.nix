@@ -47,7 +47,6 @@
 
     agent = {
       dock = "right";
-      sidebar_side = "right";
       play_sound_when_agent_done = "when_hidden";
       terminal_init_command = "";
       default_profile = "write";
@@ -132,6 +131,7 @@
       dart.settings.enableSdkFormatter = false;
       biome.settings.require_config_file = true;
       vtsls.settings.typescript.preferences.importModuleSpecifier = "non-relative";
+      lsp.rust-analyzer.initialization_options.check.command = "clippy";
     };
   };
 }
