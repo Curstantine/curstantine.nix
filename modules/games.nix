@@ -21,8 +21,8 @@
 
       cpu_stats = true;
       cpu_temp = true;
-      cpu_power = false;
-      ram = true;
+      cpu_power = true;
+      ram = false;
 
       gpu_stats = true;
       gpu_temp = true;
@@ -34,7 +34,7 @@
       engine_version = false;
       fps_metrics = "0.01";
       frame_timing = false;
-      frametime = false;
+      frametime = true;
       fps_sampling_period = 500;
 
       toggle_hud = "Shift_R";

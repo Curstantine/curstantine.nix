@@ -2,10 +2,6 @@
 {
   imports = [ inputs.colorctl.nixosModules.default ];
 
-  nixpkgs.overlays = [
-    inputs.colorctl.overlays.default
-  ];
-
   services.colorctl = {
     enable = true;
 

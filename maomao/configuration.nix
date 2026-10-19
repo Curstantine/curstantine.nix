@@ -13,6 +13,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
+    ../modules/overlays.nix
     ../modules/gc.nix
     ../modules/colorctl.nix
   ];
@@ -23,7 +24,11 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.kernelModules = [
+    "amdgpu"
+    "intel_rapl_common"
+    "intel_rapl_msr"
+  ];
   boot.initrd.verbose = false;
   boot.consoleLogLevel = 3;
   boot.loader.timeout = 0;
@@ -141,10 +146,6 @@
     users.curstantine = ./home.nix;
   };
 
-  nixpkgs.overlays = [
-    inputs.creativocode.overlays.default
-  ];
-
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.android_sdk.accept_license = true;
 
@@ -204,6 +205,9 @@
       qmk-udev-rules
       vial
     ];
+    extraRules = ''
+      SUBSYSTEM=="powercap", ACTION=="add|change", KERNEL=="intel-rapl*", RUN+="${pkgs.coreutils}/bin/chmod -R o+r /sys/%p"
+    '';
   };
 
   services.lact.enable = true;

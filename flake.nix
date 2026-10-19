@@ -15,6 +15,9 @@
 
     creativocode.url = "/home/curstantine/Code/CreativoCode/platforms";
     creativocode.inputs.nixpkgs.follows = "nixpkgs";
+
+    melody.url = "github:Curstantine/melody";
+    melody.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

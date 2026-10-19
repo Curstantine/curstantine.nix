@@ -60,6 +60,7 @@
     ../modules/devshell.nix
     ../modules/ollama.nix
     ../modules/fooyin/fooyin.nix
+    ../modules/melody.nix
     ../modules/games.nix
     # ../modules/blender.nix
 
