@@ -16,6 +16,7 @@
     ../modules/overlays.nix
     ../modules/gc.nix
     ../modules/colorctl.nix
+    ../modules/openrgb.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
