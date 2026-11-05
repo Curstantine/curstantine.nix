@@ -53,6 +53,19 @@
             ./menow/configuration.nix
           ];
         };
+
+        lakan = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs keys; };
+          modules = [
+            {
+              nix.settings.experimental-features = [
+                "nix-command"
+                "flakes"
+              ];
+            }
+            ./lakan/configuration.nix
+          ];
+        };
       };
     };
 }
